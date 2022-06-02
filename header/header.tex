@@ -1,0 +1,178 @@
+% Some great ressources to understand this configuration:
+% - https://www.overleaf.com/
+%   - Please note that Overleaf provides a very good documentation 
+%     about LaTeX in https://www.overleaf.com/learn  
+% - https://ctan.org/pkg/koma-script?lang=en
+
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*,table}{xcolor}
+
+\documentclass[11pt,
+    a4paper,
+    american,
+    numbers=noenddot, % not 1.1. but 1.1 
+    oneside,
+    bibliography=totoc,
+    bibtotocnumbered,
+    listof=totoc,
+    parskip=half,
+]{scrreprt}
+
+\usepackage{geometry}
+
+% This will make LaTeX output nag on a lot of issues that otherwise remain undetected
+\usepackage[l2tabu]{nag}
+
+% Unicode
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Fonts
+\usepackage{helvet}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Color
+\usepackage{xcolor}
+
+% Graphics
+\usepackage{graphicx}
+% Search path for images  
+\graphicspath{{images/}}
+
+% Math Stuff
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathabx}
+\usepackage{MnSymbol}
+
+
+% Avoid LaTeX Error: Too many math alphabets used in version normal.
+% See https://tex.stackexchange.com/a/243541/144487
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
+
+% Mathtools provides a series of packages designed to enhance the appearance 
+% of documents containing a lot of mathematics.
+% See https://ctan.org/pkg/mathtools?lang=en
+\usepackage{mathtools}
+
+% Cross references 
+% Packages must be included in this order, 
+% see https://tex.stackexchange.com/a/83051/144487
+\usepackage{varioref}
+\usepackage[pdfencoding=unicode, psdextra]{hyperref}
+\usepackage{cleveref}
+
+% A new reference scheme that is orthogonal to the standard stuff
+% A rising star if you want to do fancy stuff
+\usepackage{zref}
+
+% Generate blind text
+\usepackage{lipsum}
+
+% Line spacing
+\usepackage{setspace}
+
+% Tables 
+% See all table package options in https://www.overleaf.com/learn/latex/Tables
+% and how the package tabularx (https://ctan.org/pkg/tabularx?lang=en) can ease your work 
+\usepackage{tabularx}
+\usepackage{booktabs} % for \midrule
+\usepackage{colortbl} % in conjunction with color this creates colored tables
+
+
+% Special list and enumeration environments
+% https://ctan.org/pkg/paralist?lang=en
+% \begin{compactitem}[$\circ$]
+%     \item you can save some space and
+%     \item specify the symbol.
+%     \item Let me add ...
+% \end{compactitem}
+\usepackage{paralist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header and Footer
+% See the German tutorial on https://tobiw.de/en/teotm/layout-2 
+\usepackage{scrlayer-scrpage}
+
+\KOMAoptions{
+    headsepline = true,
+    footsepline = true,
+    plainfootsepline = true,
+}
+
+\automark[chapter]{chapter}
+
+\clearpairofpagestyles
+
+\ohead{\headmark}
+\ihead{\author}
+\ofoot*{\pagemark}
+
+\setkomafont{pageheadfoot}{\sffamily}
+\setkomafont{pagination}{\sffamily}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pgf/Tikz is a powerful graphics package for drawing diagrams, etc.
+% See examples at https://texample.net/tikz/examples/
+% See documentation at https://ctan.org/pkg/pgf?lang=en
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning}
+
+% The pgfplots package, which is based on TikZ, is a powerful visualization tool 
+% and ideal for creating scientific/technical graphics. The basic idea is that 
+% you provide the input data/formula and pgfplots does the rest.
+\usepackage{pgfplots}
+
+% Set compatibility mode, see https://tex.stackexchange.com/a/81912/144487
+\pgfplotsset{compat=newest}
+
+\usepackage{adjustbox}
+
+\usepackage{xparse}
+
+\usepackage{picture}
+
+\usepackage{siunitx}
+\sisetup{per-mode=symbol}
+
+\usepackage{ifthen}
+
+\usepackage{biblatex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some definitions used later
+
+\DeclareMathOperator{\diverg}{\mathit{div}}
+\DeclareMathOperator{\divergref}{\Ref{\mathit{div}}}
+\DeclareMathOperator{\grad}{\mathit{grad}}
+\DeclareMathOperator{\gradref}{\Ref{\mathit{grad}}}
+\DeclareMathOperator{\trace}{\mathit{tr}}
+\newcommand{\traceof}[1]{\trace \left( #1 \right)}
+\DeclareMathOperator{\doubleshift}{\mathit{:}}
+\DeclareMathOperator{\placeholder}{\cdot}
+\DeclareMathOperator{\determinant}{\mathit{det}}
+
+\newcommand{\detof}[1]{\left| #1 \right|}
+\newcommand{\signum}[1]{\mathit{sign}\left( #1 \right)}
+\newcommand{\tvec}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\pfrac}[2]{\displaystyle{\frac{\partial #1}{\partial #2}}}
+\newcommand{\pfractwo}[2]{\displaystyle{\frac{\partial^{2} #1}{\partial #2^{2}}}}
+\newcommand{\pfracbig}[2]{\displaystyle{\frac{\partial}{\partial #2}} #1}
+\newcommand{\pfracshort}[2]{{#1}_{#2}}
+
+
+\newcommand{\ten}[1]{ \ifthenelse{ \equal{A}{#1} \or \equal{B}{#1} \or
+        \equal{C}{#1} \or \equal{D}{#1} \or \equal{E}{#1} \or \equal{C}{#1} \or
+        \equal{D}{#1} \or \equal{E}{#1} \or \equal{F}{#1} \or \equal{G}{#1} \or
+        \equal{H}{#1} \or \equal{I}{#1} \or \equal{J}{#1} \or \equal{K}{#1} \or
+        \equal{L}{#1} \or \equal{M}{#1} \or \equal{N}{#1} \or \equal{P}{#1} \or
+        \equal{Q}{#1} \or \equal{R}{#1} \or \equal{S}{#1} \or \equal{T}{#1} \or
+        \equal{U}{#1} \or \equal{V}{#1} \or \equal{W}{#1} \or \equal{X}{#1} \or
+        \equal{Y}{#1} \or \equal{Z}{#1} }{\ensuremath{\text{$\boldsymbol{#1}$}}}{
+        \ensuremath{\text{\Large $\boldsymbol{#1}$}}}}
+\newcommand{\stress}{\ensuremath{\sigma}}
+\newcommand{\tenstress}{\ensuremath{\ten{\stress}}}

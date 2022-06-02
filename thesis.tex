@@ -1,0 +1,58 @@
+\include{header/header}
+\include{header/glossary_settings}
+\include{header/title_macros}
+
+\addbibresource{misc/literature.bib}
+
+\begin{document}
+
+\include{misc/abbreviations}
+\include{misc/glossary}
+
+% Replace by useful values!
+\makeTheTitlepage{
+    title={The Title of this Thesis},
+    type={Mini Thesis},
+    author={Potter, Harry and Granger, Hermione},
+    place=Aachen,
+    date=\today,
+    examiner={Esch, Thomas, Prof. Dr.-Ing},
+    secondExaminer={Werle, Markus, Dipl.-Ing}
+}
+
+\clearpage
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\begin{spacing}{1.2}
+    \include{chapter/introduction}
+    \include{chapter/demo_chapter}
+
+    \printbibliography[heading=bibnumbered, title={Bibliography}]
+
+    \appendix
+    \include{chapter/appendix}
+
+    \include{misc/symbols}
+    \glsaddall[types={symbolslist,glossaryx}]
+
+    % This command would add *all** non-mentioned glossary entries (e.g. the acronyms)
+    % \glsaddall
+    % It's better to mention those in the text via 
+    % \acrlong{BMS}, \acrshort{BMS}, and \acrfull{BMS}.
+    % Because then the page numbers occur correctly in the list of acronyms
+    \clearpage
+
+    \printglossary[type=symbolslist,style=symbunitlong,title=List of Symbols]
+    \printglossary[type=acronym, title=List of Abbreviations]
+
+
+    %\printglossary[type=glossaryx,style=glossaryxstyle,title=Glossary]
+    \printglossary[type=glossaryx, title=Glossary]
+
+\end{spacing}
+
+\end{document}
+

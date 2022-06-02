@@ -1,0 +1,126 @@
+\definecolor{fh-mint}{RGB}{0,177,172}
+\def\hlmint{\fontfamily{lmss}\fontsize{19pt}{19pt}\fontseries{b}\color{fh-mint}\selectfont}
+\def\hlAbold{\fontfamily{lmss}\fontsize{14pt}{30pt}\fontseries{b}\selectfont}
+\def\hlAnormal{\fontfamily{lmss}\fontsize{14pt}{14pt}\fontseries{n}\selectfont}
+
+\newcommand{\showlogo}{
+    % Due to a bug this code does not reliably work
+
+    % \begin{tikzpicture}[remember picture,overlay]
+    %     \node[anchor=north east,inner sep=0pt] at (current page.north east)
+    %     {\includegraphics[height=4cm]{fh-logo-right}};
+    % \end{tikzpicture}
+
+    \begin{picture}(0pt,0pt)(2cm,-2cm)
+        % Logo zeichnen
+        \put(18cm,-3cm){\includegraphics[height=4cm]{fh-logo-right}}
+    \end{picture}
+}
+
+\ExplSyntaxOn
+\keys_define:nn { titlepage }
+{
+    title  .tl_set:N  = \l__titlepage_title_tl,
+    type .tl_set:N  = \l__titlepage_type_tl,
+    author  .tl_set:N  = \l__titlepage_author_tl,
+    place  .tl_set:N  = \l__titlepage_place_tl,
+    date .tl_set:N  = \l__titlepage_date_tl,
+    examiner .tl_set:N  = \l__titlepage_examiner_tl,
+    secondExaminer .tl_set:N  = \l__titlepage_second_examiner_tl,
+}
+
+\NewDocumentCommand { \makeTheTitlepage } { +m }
+{
+    \group_begin:
+    \keys_set:nn { titlepage } { #1 }
+    \title{\l__titlepage_title_tl}
+    \author{\l__titlepage_author_tl}
+    \date{\l__titlepage_date_tl}
+    \begin{titlepage}
+        \showlogo
+        \vspace*{2cm}
+        \begin{center}
+            {
+                % \fontsize{20}{30}
+                % \selectfont
+                {\hlmint FH~Aachen}
+
+                \par \hlAbold
+                Faculty~of~Aerospace~Engineering
+
+                \vspace*{0.5cm}
+
+                \par
+                \begin{spacing}{1.5}
+                    \hlAnormal Department~of~Alternative\\ Propulsion~Systems
+                \end{spacing}
+            }
+
+            \vspace*{1cm}
+            \par \l__titlepage_type_tl
+            \par \hlAbold \l__titlepage_title_tl
+
+            \vspace*{3cm}
+
+            \par \hlAnormal \l__titlepage_author_tl
+            \vspace*{1cm}
+            \par \hlAnormal \l__titlepage_place_tl,~\l__titlepage_date_tl
+
+            \vspace*{3cm}
+            \par
+            \begin{tabularx}{\textwidth}{ X  X  }
+                Examiner:        & \l__titlepage_examiner_tl        \\[1em]
+                Second~Examiner: & \l__titlepage_second_examiner_tl \\
+            \end{tabularx}
+        \end{center}
+
+    \end{titlepage}
+    \group_end:
+}
+\ExplSyntaxOff
+
+
+
+% % \begin{titlepage}
+% \begin{tikzpicture}[remember picture,overlay]
+%     \node at (current page.north west) [fill=red!20,rounded
+%         corners,below right] {Top Left};
+%     \node at (current page.south west) [fill=red!20,rounded
+%         corners,above right] {Bottom Left};
+%     \node at (current page.south east) [fill=red!20,rounded
+%         corners,above left] {Bottom Right};
+%     \node at (current page.north east) [fill=red!20,rounded
+%         corners,below left] {Top Right};
+%     \node at (current page) [fill=red!20,rounded
+%         corners] {Center};
+% \end{tikzpicture}
+% % \end{titlepage}
+
+
+% \begin{titlepage}
+% \begin{tikzpicture}[overlay, remember picture]
+%     % set a new origin [1]
+%     %\coordinate (O) at (current page.south west);
+%     \node[anchor=north west, %anchor is upper left corner of the graphic
+%         %xshift=5cm, %shifting around
+%         %yshift=5cm
+%     ]
+%     at (current page.north east) % right upper corner of the page
+%     {\includegraphics[width=5cm]{fh-logo-right}};
+%     % at (current page.center)
+%     % {\includegraphics[width=5cm]{fh-logo-right}};
+
+%     \fill [gray] (current page.south west) -| (current page.north east) -- cycle;
+% \end{tikzpicture}
+
+% \begin{center}
+%     {
+%         \fontsize{20}{10}
+%         \selectfont
+%         \textbf{Faculty of Aerospace Engineering}
+%     }
+
+%     \textbf{Department of Alternative\\ Propulsion Systems}
+% \end{center}
+
+% \end{titlepage}

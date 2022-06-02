@@ -1,0 +1,91 @@
+\usepackage[
+    backend=biber,
+    citestyle=authortitle,
+    bibstyle=authortitle,
+    isbn=false,
+    doi=false,
+    url=false,
+    block=space,
+    maxcitenames=2,
+    maxbibnames=99,
+    backref=false,
+    giveninits=true,
+    dashed=false]{biblatex}
+\setlength{\bibitemsep}{1em}
+\setlength{\bibhang}{2em}
+
+\DeclareFieldFormat[
+    book,
+    article,
+    inbook,
+    incollection,
+    inproceedings,
+    patent,
+    thesis,
+    unpublished,
+    misc,
+    manual]
+{citetitle}{\mkbibparens{#1\isdot}}
+
+
+% \usepackage[backend=biber,
+%     bibencoding=utf8,
+%     %citestyle=alphabetic,
+%     citestyle=verbose-note,
+%     bibstyle=verbose,
+%     %style=verbose,
+%     url=true,
+%     autocite=footnote,
+%     sorting=nyt, %Sortierung nach Name, Jahr, Titel
+%     defernumbers=true,
+%     maxbibnames=99
+% ]{biblatex}
+
+
+% % See https://ctan.space-pro.be/tex-archive/macros/latex/contrib/xurl/doc/xurl.pdf
+% \setcounter{biburllcpenalty}{100}
+% \setcounter{biburlucpenalty}{200}
+% \setcounter{biburlnumpenalty}{100}
+
+% \DeclareFieldFormat{file}{Datei: {\sloppy\url{#1}}}
+% \renewbibmacro{finentry}{\printfield{file}\finentry}
+
+% % TODO: check https://tex.stackexchange.com/a/582029/144487 for whether it is a better solution
+% % Stolen from https://tex.stackexchange.com/questions/200286/biblatex-repeated-citations-in-footnotes-that-point-back-to-earlier-footnotes  
+% \makeatletter
+% \DeclareCiteCommand{\superfootcite}
+% {}
+% {\usebibmacro{citeindex}%
+%     \usebibmacro{superfootcite}}
+% {}
+% {}
+
+% \newbibmacro*{superfootcite}{%
+%     \ifciteseen
+%     {\usebibmacro{superfootcite:note}}
+%     {\mkbibfootnote{\usebibmacro{footcite:full}%
+%             \usebibmacro{footcite:save}}}}
+
+% \newbibmacro*{superfootcite:note}{\footref{cbx@\csuse{cbx@f@\thefield{entrykey}}}}
+% \makeatother
+
+% % TODO: dive deeper starting here
+% % https://tex.stackexchange.com/questions/319084/defbibenvironment-letters-instead-of-numbers
+% \defbibenvironment{bibliography}
+% {\trivlist}
+% {\endtrivlist}
+% {\item
+%     % \printtext[labelnumberwidth]{%
+%     %     \printfield{labelprefix}%
+%     %     \printfield{labelnumber}%
+%     % }%
+%     \addspace}
+
+% % https://tex.stackexchange.com/a/1690/144487
+% \DeclareCiteCommand{\parencite}[\mkbibparens]
+% {\usebibmacro{prenote}}
+% {\usebibmacro{citeindex}%
+%     \printtext[bibhyperref]{\usebibmacro{cite}}
+% }
+% {\multicitedelim}
+% {\usebibmacro{postnote}}

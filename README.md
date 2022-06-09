@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This is a LaTeX template that can be used (and adopted) for a Thesis at FH Aachen. If you want to start with this project, create your own copy by [using this repository as a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), i.e. just press the `use this template`button above. 
+This is a LaTeX template that can be used (and adopted) for a Thesis at FH Aachen. If you want to start with this project, create your own copy by [using this repository as a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), i.e. just press the `Use this template` button above. 
 
-![a screenshot of the button row highlighting the "use thsi template" button](docs/images/use-this-template.png)
+![a screenshot of the button row highlighting the "Use this template" button](docs/images/use-this-template.png)
 
 If you are new to LaTeX please check the examples in [chapter/demo_chapter.tex](chapter/demo_chapter.tex). We also recommend the Material provided by [Overleaf](https://www.overleaf.com/).
 
@@ -17,7 +17,7 @@ If you are new to LaTeX please check the examples in [chapter/demo_chapter.tex](
 - Visit [Overleaf](https://www.overleaf.com/) and create a paid user account
 - Choose to create a new project and choose to import it from GitHub
   ![](docs/images/screenshot_first_steps_2.png)
-- Then select form the alphabetically ordered list the newly created repository and select it
+- Then select from the alphabetically ordered list the newly created repository and click on `Import to Overleaf`
   ![](docs/images/screenshot_first_steps_3.png)
   ![](docs/images/screenshot_first_steps_4.png)
 - You should now see the project but with a failed compilation

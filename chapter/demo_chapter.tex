@@ -74,6 +74,34 @@ or
     \label{fh-logo}
 \end{figure}
 
+It is also possible to adjust the position of the image and crop it, thereby offering the inclusion of only parts of an image (see e.g. \url{https://texblog.org/2012/02/23/crop-figures-with-includegraphics/}):
+
+\begin{figure}[!h]
+    \centering
+    % Note that the file ending has to be mentioned explicitly, 
+    % otherwise the file thesis.pdf would be tried to be included, 
+    % and not images/thesis.png
+    % The scheme is: trim=left bottom right top, clip
+    \includegraphics[trim=50 300 200 10,clip,width=\textwidth]{thesis.png}
+    \caption[Some cropped image]{A cropped version of \vref{The complete image}}
+    \label{cropped image}
+\end{figure}
+
+The complete figure is
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{thesis.png}
+    \caption{The complete image}
+    \label{The complete image}
+\end{figure}
+
+
+
+% clearpage enfoeces all floating objects like tables and figures to be rendered before starting a new section or chapter
+
+\clearpage
+
 \section{Formulas}
 \label{sec:Formulas}
 
@@ -340,6 +368,8 @@ You should also take a look at \url{http://pgfplots.sourceforge.net/gallery.html
     \caption{Maximum load of a crane}
     \label{fig:Maximum load of a crane}
 \end{figure}
+
+\clearpage
 
 \section{Citations}
 \label{sec: Citations}

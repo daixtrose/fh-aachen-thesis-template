@@ -1,7 +1,7 @@
 ## Logo of FH Aachen
 
-- The file `images/fh-logo-right.svg` was downloaded from [the website of FH Aachen]( https://www.fh-aachen.de/typo3conf/ext/fhac_design_2012/Resources/Public/Images/fh-logo-right.svg) on June 1, 2022 and is copyright (c) FH Aachen, Bayernallee 11, 52066 Aachen, Germany. 
-- The file `images/fh-logo-right.png` was derived from the svg version issuing the command  
+- The file [`images/fh-logo-right.svg`](images/fh-logo-right.svg) was downloaded from [the website of FH Aachen]( https://www.fh-aachen.de/typo3conf/ext/fhac_design_2012/Resources/Public/Images/fh-logo-right.svg) on June 1, 2022 and is copyright (c) FH Aachen, Bayernallee 11, 52066 Aachen, Germany. 
+- The file [`images/fh-logo-right.png`](images/fh-logo-right.png) was derived from the svg version issuing the command  
   ```bash
   rsvg-convert -w 300 fh-logo-right.svg -o fh-logo-right.png
   ```

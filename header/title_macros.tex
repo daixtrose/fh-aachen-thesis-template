@@ -20,8 +20,11 @@
 \ExplSyntaxOn
 \keys_define:nn { titlepage }
 {
+    organization .tl_set:N  = \l__titlepage_organization_tl,
     title  .tl_set:N  = \l__titlepage_title_tl,
     type .tl_set:N  = \l__titlepage_type_tl,
+    faculty .tl_set:N  = \l__titlepage_faculty_tl,
+    department .tl_set:N  = \l__titlepage_department_tl,
     author  .tl_set:N  = \l__titlepage_author_tl,
     place  .tl_set:N  = \l__titlepage_place_tl,
     date .tl_set:N  = \l__titlepage_date_tl,
@@ -43,16 +46,16 @@
             {
                 % \fontsize{20}{30}
                 % \selectfont
-                {\hlmint FH~Aachen}
+                {\hlmint \l__titlepage_organization_tl}
 
                 \par \hlAbold
-                Faculty~of~Aerospace~Engineering
+                \l__titlepage_faculty_tl
 
                 \vspace*{0.5cm}
 
                 \par
                 \begin{spacing}{1.5}
-                    \hlAnormal Department~of~Alternative\\ Propulsion~Systems
+                    \hlAnormal \l__titlepage_department_tl
                 \end{spacing}
             }
 

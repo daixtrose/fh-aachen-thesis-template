@@ -10,11 +10,24 @@ If you are new to LaTeX please check the examples in [chapter/demo_chapter.tex](
 
 ## Establishing a Developer Environment 
 
-### Beginner's Approach
+### Beginner's Approach with a Paid Overleaf User Account 
 
-- Create your own GitHub repository based on this one by [using this repository as a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
-- Visit [Overleaf](https://www.overleaf.com/) and create a free user account
-- ... TODO
+- Create your own GitHub repository based on this one by [using this repository as a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template):
+  ![](docs/images/screenshot_first_steps_1.png)
+- Visit [Overleaf](https://www.overleaf.com/) and create a paid user account
+- Choose to create a new project and choose to import it from GitHub
+  ![](docs/images/screenshot_first_steps_2.png)
+- Then select form the alphabetically ordered list the newly created repository and select it
+  ![](docs/images/screenshot_first_steps_3.png)
+  ![](docs/images/screenshot_first_steps_4.png)
+- You should now see the project but with a failed compilation
+  ![](docs/images/screenshot_first_steps_5.png)
+- Click on the menu in the upper left corner and configure the main document to be `thesis.tex`  
+![](docs/images/screenshot_first_steps_6.png)
+- Press the green button labelled `Recompile` and wait approximately 35 seconds 
+![](docs/images/screenshot_first_steps_7.png)
+- If you want to sync back to your repository, click on the menu in the upper left corner, then on the entry `GitHub`. A dialog will appear which allows to push (aka sync) the changes from Oeverlef back into the repository.  
+![](docs/images/screenshot_first_steps_8.png)
 
 ### Bare Metal Approach
 
@@ -41,5 +54,11 @@ If you are new to LaTeX please check the examples in [chapter/demo_chapter.tex](
   ```bash
   latexmk -c thesis
   latexmk -pdf thesis
+  ```
+- after you are done with your changes, commit and push them back. Either [through the GUI features of VsCode](https://code.visualstudio.com/docs/editor/versioncontrol) or via command line
+  ```bash
+  git add -A
+  git commit -m "some comments"
+  git push
   ```
 

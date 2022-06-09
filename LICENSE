@@ -1,3 +1,15 @@
+## Logo of FH Aachen
+
+The file `images/fh-logo-right.svg` was downloaded from https://www.fh-aachen.de/typo3conf/ext/fhac_design_2012/Resources/Public/Images/fh-logo-right.svg on June 1, 2022 and is copyright FH Aachen, Bayernallee 11, 52066 Aachen, Germany. 
+
+The file `images/fh-logo-right.png` was derived from the svg version issuing the command  
+```bash
+rsvg-convert -w 300 fh-logo-right.svg -o fh-logo-right.png
+```
+an as derivative work remains copyright FH Aachen, Bayernallee 11, 52066 Aachen, Germany.
+
+## All other files 
+
 MIT License
 
 Copyright (c) 2022 Markus Werle

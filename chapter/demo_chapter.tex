@@ -391,40 +391,55 @@ As one can see in \cite{iso_13849_part1}, functional safety is difficult.
 
 \section{How To Use Abbreviations}
 
-\glsxtrlong{ASIL}, \glsxtrshort{ASIL}, and \glsxtrfull{ASIL}
+In order to use Abbreviations you can use the command \verb+\gls{ACRONYM}+.
+The nice thing is that on first use it will display the long version together with the acronym in delimiters and on consecutive usage of the macro only show the acronym:
 
+\begin{compactitem}
+    \item First usage: \gls{ASIL}
+    \item Second usage \gls{ASIL}
+\end{compactitem}
 
-\glsxtrshort{C}
-\glsxtrshort{CEN}
-\glsxtrshort{CENELEC}
-\glsxtrshort{DIN}{DIN}
-\glsxtrshort{E}{E}
-\glsxtrshort{AELV}
-\glsxtrshort{ETSI}
-\glsxtrshort{EMC}
-\glsxtrshort{EN}
-\glsxtrshort{F}
-\glsxtrshort{FIT}
-\glsxtrshort{FMEA}
-\glsxtrshort{FuSa}
-\glsxtrshort{FSR}
-\glsxtrshort{FTA}
-\glsxtrshort{FZV}
-\glsxtrshort{IEC}
-\glsxtrshort{ISO}
-\glsxtrshort{KBA}
-\glsxtrshort{OEMs}
-\glsxtrshort{QM}
-\glsxtrshort{S}
-\glsxtrshort{StVG}
-\glsxtrshort{StVO}
-\glsxtrshort{StVZO}
-\glsxtrshort{TUEV}
-\glsxtrshort{UNECE}
-\glsxtrshort{VDA}
-\glsxtrshort{BPMN}
-\glsxtrshort{FBV}
-\glsxtrshort{EU}
+But you can also explicitly define whether the long or short version is to be displayed:
+
+\begin{compactitem}
+    \item Long version: \verb+\glsxtrlong{ASIL}+ yields \glsxtrlong{ASIL}
+    \item Short version: \verb+\glsxtrshort{ASIL}+ yields \glsxtrshort{ASIL}
+    \item Full version: \verb+\glsxtrfull{ASIL}+ yields \glsxtrfull{ASIL}
+\end{compactitem}
+
+See here some abbreviations:
+
+\glsxtrshort{C},
+\glsxtrshort{CEN},
+\glsxtrshort{CENELEC},
+\glsxtrshort{DIN},
+\glsxtrshort{E},
+\glsxtrshort{AELV},
+\glsxtrshort{ETSI},
+\glsxtrshort{EMC},
+\glsxtrshort{EN},
+\glsxtrshort{F},
+\glsxtrshort{FIT},
+\glsxtrshort{FMEA},
+\glsxtrshort{FuSa},
+\glsxtrshort{FSR},
+\glsxtrshort{FTA},
+\glsxtrshort{FZV},
+\glsxtrshort{IEC},
+\glsxtrshort{ISO},
+\glsxtrshort{KBA},
+\glsxtrshort{OEMs},
+\glsxtrshort{QM},
+\glsxtrshort{S},
+\glsxtrshort{StVG},
+\glsxtrshort{StVO},
+\glsxtrshort{StVZO},
+\glsxtrshort{TUEV},
+\glsxtrshort{UNECE},
+\glsxtrshort{VDA},
+\glsxtrshort{BPMN},
+\glsxtrshort{FBV},
+\glsxtrshort{EU},
 \glsxtrshort{EC}
 
 % All hierarchies

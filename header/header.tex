@@ -19,6 +19,9 @@
     parskip=half,
 ]{scrreprt}
 
+% fix some packages like float
+\usepackage{scrhack}
+
 \usepackage{geometry}
 
 % This will make LaTeX output nag on a lot of issues that otherwise remain undetected
@@ -142,6 +145,9 @@
 \usepackage{ifthen}
 
 \usepackage{biblatex}
+
+% required for option [H] in figure
+\usepackage{float}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some definitions used later
